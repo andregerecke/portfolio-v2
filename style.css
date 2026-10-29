@@ -1,0 +1,63 @@
+:root{
+  --deep-navy:#06223a;
+  --coral:#ff6b61;
+  --sand:#f4ead1;
+  --muted: #6b7280;
+  --bg: #fff;
+  --maxw: 1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg);color:var(--deep-navy);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display', serif;margin:0;color:var(--deep-navy)}
+p{margin:0 0 1rem 0;line-height:1.5}
+.container{max-width:var(--maxw);margin:0 auto;padding:2rem}
+.nav{position:sticky;top:0;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));backdrop-filter:blur(6px);z-index:40;border-bottom:1px solid rgba(6,34,58,0.06)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.25rem;max-width:var(--maxw);margin:0 auto}
+.brand{font-family:'Playfair Display';font-size:1.25rem;color:var(--deep-navy);text-decoration:none}
+.nav-links{list-style:none;display:flex;gap:0.75rem;margin:0;padding:0}
+.nav-links a{color:var(--deep-navy);text-decoration:none;padding:0.5rem;border-radius:6px}
+.nav-links a:hover{background:rgba(255,107,97,0.08)}
+.hero{padding:4rem 0;background:linear-gradient(135deg,var(--sand) 0%, #fff 40%)}
+.hero-grid{display:grid;grid-template-columns:1fr 320px;gap:2rem;align-items:center}
+.display{font-size:2.25rem;margin-bottom:0.5rem}
+.lead{color:var(--muted);margin-bottom:1rem}
+.photo{width:240px;height:240px;background:linear-gradient(180deg, rgba(6,34,58,0.08), rgba(255,107,97,0.06));display:block;border-radius:14px;font-weight:600;color:var(--deep-navy);overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.small-links{list-style:none;padding:0;margin-top:1rem;display:flex;gap:0.5rem}
+.small-links a{font-size:0.9rem;color:var(--deep-navy);text-decoration:none}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:10px;background:var(--deep-navy);color:#fff;text-decoration:none;border:none;cursor:pointer}
+.btn:hover{opacity:0.95}
+.btn-outline{background:transparent;border:2px solid var(--deep-navy);color:var(--deep-navy);padding:0.5rem 0.8rem}
+.section{padding:3rem 0}
+.section-title{font-size:1.35rem;margin-bottom:0.6rem}
+.timeline .job{margin-bottom:1.25rem;padding:1rem;border-left:3px solid var(--coral);background:rgba(6,34,58,0.03);border-radius:8px}
+.muted{color:var(--muted);font-size:0.95rem;margin-bottom:0.5rem}
+.chips{display:flex;flex-wrap:wrap;gap:0.5rem}
+.chip{background:var(--sand);padding:0.4rem 0.65rem;border-radius:999px;font-weight:600;color:var(--deep-navy)}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.project{padding:1rem;border-radius:10px;background:linear-gradient(180deg, rgba(6,34,58,0.03), rgba(255,107,97,0.02))}
+.cover-body{background:#fff;padding:1rem;border-radius:8px;box-shadow:0 6px 18px rgba(6,34,58,0.06)}
+.contact{padding-bottom:6rem}
+.contact-chip{position:fixed;right:18px;bottom:28px;background:var(--coral);color:#fff;padding:0.6rem 0.9rem;border-radius:999px;box-shadow:0 8px 24px rgba(6,34,58,0.18);z-index:60}
+.contact-chip a{color:#fff;text-decoration:none;font-weight:600}
+
+/* responsive */
+@media(max-width:900px){
+  .project-grid{grid-template-columns:1fr}
+  .hero-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+
+/* subtle entry animations */
+.reveal{opacity:0;transform:translateY(14px);transition:all 520ms cubic-bezier(.2,.9,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* print styles for CV download */
+@media print{
+  body{background:#fff;color:#000}
+  .nav, .contact-chip, .btn, .hero-right{display:none}
+  .container{padding:0}
+}
+
+/* small helpers */
+.muted{color:var(--muted)}
