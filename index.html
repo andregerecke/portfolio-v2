@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andre Gerecke | AI Enablement Leader</title>
+    <meta name="description" content="Driving Innovation Through AI Leadership. Portfolio of Andre Gerecke.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- 1. DESIGN SYSTEM & VARIABLES --- */
+        :root {
+            /* Palette */
+            --bg-dark: #050a14;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --bg-card-hover: rgba(255, 255, 255, 0.07);
+            
+            --primary-blue: #1D4477;
+            --accent-cyan: #40B9B7;
+            --accent-glow: rgba(64, 185, 183, 0.5);
+            
+            --text-main: #e6f1ff;
+            --text-muted: #94a3b8;
+            --text-accent: #40B9B7;
+
+            /* Typography */
+            --font-display: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+
+            /* Spacing & Layout */
+            --container-width: 1200px;
+            --section-spacing: 140px;
+            
+            /* Effects */
+            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+            --glass-blur: blur(12px);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* --- 2. RESET & BASE --- */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; cursor: none; } /* Custom cursor enabled */
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        ::selection { background: var(--accent-cyan); color: var(--bg-dark); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary-blue); border-radius: 4px; }
+
+        a { text-decoration: none; color: inherit; cursor: none; }
+        ul { list-style: none; }
+
+        /* --- 3. CUSTOM CURSOR --- */
+        .cursor-dot, .cursor-outline {
+            position: fixed;
+            top: 0; left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+        .cursor-dot {
+            width: 8px; height: 8px;
+            background-color: var(--accent-cyan);
+        }
+        .cursor-outline {
+            width: 40px; height: 40px;
+            border: 1px solid var(--accent-cyan);
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+        /* Hover state for cursor */
+        body.hovering .cursor-outline {
+            width: 60px; height: 60px;
+            background-color: rgba(64, 185, 183, 0.1);
+            border-color: transparent;
+        }
+
+        /* --- 4. UTILITIES --- */
+        .container {
+            width: 90%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+        
+        .section { padding: var(--section-spacing) 0; position: relative; }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-smooth);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* --- 5. NAVIGATION --- */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            padding: 20px 0;
+            z-index: 100;
+            transition: all 0.3s;
+            background: rgba(5, 10, 20, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .nav-container {
+            display: flex; justify-content: space-between; align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--accent-cyan); }
+
+        .nav-links { display: flex; gap: 40px; }
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link:hover { color: var(--accent-cyan); }
+        .nav-link::after {
+            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+            background: var(--accent-cyan); transition: width 0.3s var(--ease-smooth);
+        }
+        .nav-link:hover::after { width: 100%; }
+
+        /* --- 6. HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        /* Animated Background Grid */
+        .hero-bg {
+            position: absolute; inset: 0; z-index: -1;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(29, 68, 119, 0.25), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(64, 185, 183, 0.15), transparent 25%);
+        }
+        .grid-lines {
+            position: absolute; width: 200%; height: 200%; top: -50%; left: -50%;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(1000px) rotateX(60deg) translateY(0);
+            animation: gridScroll 20s linear infinite;
+            mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
+        }
+        @keyframes gridScroll { 100% { transform: perspective(1000px) rotateX(60deg) translateY(50px); } }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 30px;
+            background: rgba(64, 185, 183, 0.1);
+            border: 1px solid rgba(64, 185, 183, 0.3);
+            color: var(--accent-cyan);
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -2px;
+        }
+
+        .hero-bio {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 540px;
+            margin-bottom: 40px;
+        }
+
+        .cta-group { display: flex; gap: 20px; }
+
+        .btn {
+            padding: 16px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-family: var(--font-display);
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--accent-cyan);
+            color: var(--bg-dark);
+        }
+        .btn-primary::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%;
+            background: white; z-index: -1; transition: width 0.3s var(--ease-smooth);
+            opacity: 0.2;
+        }
+        .btn-primary:hover::before { width: 100%; }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-main);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+
+        /* Profile Image Container */
+        .profile-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        .profile-img-box {
+            width: 400px; height: 500px;
+            position: relative;
+            z-index: 2;
+        }
+        .profile-img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            filter: grayscale(20%) contrast(1.1);
+            transition: filter 0.5s;
+        }
+        .profile-wrapper:hover .profile-img { filter: grayscale(0%); }
+        
+        /* Decorative Frame */
+        .profile-frame {
+            position: absolute;
+            inset: -20px;
+            border: 1px solid rgba(64, 185, 183, 0.3);
+            border-radius: 20px;
+            z-index: 1;
+            transition: transform 0.5s var(--ease-elastic);
+        }
+        .profile-wrapper:hover .profile-frame { transform: translate(15px, 15px); }
+
+        /* --- 7. METRICS SECTION --- */
+        .metrics-bar {
+            background: rgba(255,255,255,0.02);
+            border-top: var(--glass-border);
+            border-bottom: var(--glass-border);
+            padding: 60px 0;
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        .metric-item h3 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .metric-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .metric-item .metric-desc {
+            font-size: 0.85rem;
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 400;
+            margin-top: 12px;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+
+        /* --- 8. SUCCESS CASES (Cards) --- */
+        .section-header { margin-bottom: 80px; }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .section-title span { color: var(--accent-cyan); }
+        
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .glass-card {
+            background: var(--bg-card);
+            border: var(--glass-border);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.4s var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card:hover {
+            transform: translateY(-10px);
+            background: var(--bg-card-hover);
+            border-color: var(--accent-cyan);
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+        }
+
+        .card-badge {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-cyan);
+            margin-bottom: 20px;
+            display: block;
+            font-weight: 700;
+        }
+        
+        .glass-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .glass-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .impact-box {
+            background: rgba(64, 185, 183, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-cyan);
+        }
+        .impact-box strong { color: var(--text-main); display: block; margin-bottom: 4px; }
+        .impact-box span { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* --- 9. EXPERIENCE (Timeline) --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .timeline::before {
+            content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 2px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .timeline-item {
+            padding-left: 50px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .timeline-dot {
+            position: absolute; left: -6px; top: 0;
+            width: 14px; height: 14px;
+            background: var(--bg-dark);
+            border: 2px solid var(--accent-cyan);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        .timeline-item:hover .timeline-dot { background: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); }
+
+        .timeline-date {
+            font-family: var(--font-display);
+            color: var(--accent-cyan);
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .timeline-role { font-size: 1.25rem; font-weight: 700; margin-bottom: 5px; }
+        .timeline-company { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
+        .timeline-desc li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .timeline-desc li::before {
+            content: '▹'; position: absolute; left: 0; color: var(--accent-cyan);
+        }
+
+        /* --- 10. SKILLS (Tag Cloud) --- */
+        .skills-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .skill-tag {
+            padding: 10px 24px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            cursor: none;
+        }
+        .skill-tag:hover {
+            background: rgba(64, 185, 183, 0.1);
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan);
+            transform: translateY(-3px);
+        }
+        .skill-category {
+            width: 100%;
+            text-align: center;
+            margin: 30px 0 15px;
+            color: var(--text-muted);
+            font-family: var(--font-display);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+        }
+
+        /* --- 11. FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 100px 0 40px;
+            background: linear-gradient(to top, #02040a, var(--bg-dark));
+        }
+        .footer-cta h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+        .footer-copy {
+            margin-top: 80px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-bio { margin: 0 auto 40px; }
+            .cta-group { justify-content: center; }
+            .profile-wrapper { display: none; } /* Hide image on mobile for cleaner look */
+            h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Andre<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#impact" class="nav-link">Impact</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"><div class="grid-lines"></div></div>
+        <div class="container hero-content">
+            <div class="hero-text reveal active">
+                <span class="hero-tag">AI Enablement & Implementation</span>
+                <h1>Driving Innovation<br><span class="text-gradient">Through AI Leadership</span></h1>
+                <p class="hero-bio">
+                    Digital Transformation leader with 15+ years of experience driving AI adoption and automation in enterprise settings. Currently leading the AI@OPEA Initiative, creating Generative AI Personas, and partnering with IT/OT to improve AI solutions.
+                </p>
+                <div class="cta-group">
+                    <a href="#impact" class="btn btn-primary">View Success Cases</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="profile-wrapper reveal">
+                <div class="profile-frame"></div>
+                <div class="profile-img-box">
+                    <img src="assets/profile.png" alt="Andre Gerecke" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <div class="metrics-bar">
+        <div class="container metrics-grid">
+            <div class="metric-item reveal">
+                <h3 data-target="350">0</h3>
+                <p>Colleagues Upskilled</p>
+                <p class="metric-desc">Delivered 20+ AI workshops with a 92% satisfaction rate, fostering a culture of AI adoption.</p>
+            </div>
+            <div class="metric-item reveal">
+                <h3 data-target="15">0</h3>
+                <p>Use Cases Implemented</p>
+                <p class="metric-desc">Facilitated ideation and implementation of 15 success cases with efficiency gains.</p>
+            </div>
+            <div class="metric-item reveal">
+                <h3 data-target="140">0</h3>
+                <p>Days Saved</p>
+                <p class="metric-desc">Estimated annual efficiency gains from implemented AI Personas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Cases -->
+    <section id="impact" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Success Cases <span>& Impact</span></h2>
+                <p style="color: var(--text-muted); max-width: 600px;">
+                    The AI@OPEA Initiative is driven by a comprehensive 3-pillar approach: AI Upskilling, Business Impact, and Next Level AI.
+                </p>
+            </div>
+            
+            <div class="cards-container">
+                <!-- Case 1 -->
+                <div class="glass-card reveal">
+                    <span class="card-badge">Procurement</span>
+                    <h3>Marge the Market Expert</h3>
+                    <p>Analyses macroeconomics and supply chain risks via internet research for procurement negotiations.</p>
+                    <div class="impact-box">
+                        <strong>Impact</strong>
+                        <span>Better negotiation results (200k-500k€) & ~30 days saved (15%).</span>
+                    </div>
+                </div>
+                <!-- Case 2 -->
+                <div class="glass-card reveal" style="transition-delay: 0.1s;">
+                    <span class="card-badge">Legal</span>
+                    <h3>Contract Validator</h3>
+                    <p>Enhances validation for real estate contracts and cover sheets in DocumentDialogue.</p>
+                    <div class="impact-box">
+                        <strong>Impact</strong>
+                        <span>Cuts contract validation time in Real Estate Accounting by ~33% (43 days).</span>
+                    </div>
+                </div>
+                <!-- Case 3 -->
+                <div class="glass-card reveal" style="transition-delay: 0.2s;">
+                    <span class="card-badge">Development IT</span>
+                    <h3>Typo</h3>
+                    <p>Compiles written documentation, ensuring high-level grammar and standard templates are used.</p>
+                    <div class="impact-box">
+                        <strong>Impact</strong>
+                        <span>Standardized outputs & ~29 days saved (75% reduction).</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Quote -->
+    <section class="section" style="background: linear-gradient(to right, rgba(29, 68, 119, 0.1), transparent);">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 30px; opacity: 0.5;"></i>
+            <h2 class="reveal" style="font-size: 2rem; line-height: 1.4; margin-bottom: 30px;">
+                "I believe in bringing together business strategy, enablement and implementation to deliver measurable value".
+            </h2>
+            <p class="reveal" style="color: var(--text-muted);">
+                Leading the AI@OPEA Initiative.
+            </p>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="section">
+        <div class="container">
+            <div class="section-header reveal">
+                <h2 class="section-title">Professional <span>Experience</span></h2>
+            </div>
+            
+            <div class="timeline">
+                <!-- Job 1 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Oct 2023 - Present</span>
+                    <h3 class="timeline-role">Senior Digital Transformation Manager</h3>
+                    <div class="timeline-company">RWE Renewables Europe & Australia GmbH, Essen</div>
+                    <ul class="timeline-desc">
+                        <li>Leading the AI@OPEA Initiative based on a 3‑pillar approach.</li>
+                        <li>Invented and implemented an AI Persona Framework.</li>
+                        <li>Delivered 20+ AI workshops upskilling ~350 colleagues.</li>
+                        <li>Co-led POCs with IT/OT (Model Context Protocol, AI Agents).</li>
+                        <li>Collaborating with IT leads to ensure AI solutions are production-ready and compliant.</li>
+                    </ul>
+                </div>
+                <!-- Job 2 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Aug 2019 - Sep 2023</span>
+                    <h3 class="timeline-role">Senior Digital Expert</h3>
+                    <div class="timeline-company">RWE Renewables GmbH, Essen</div>
+                    <ul class="timeline-desc">
+                        <li>Led digital initiatives delivering high‑value MVPs using Lean Startup & Scrum.</li>
+                        <li>Founded and led the “Process Optimization Factory” (POF) to automate repetitive processes.</li>
+                    </ul>
+                </div>
+                <!-- Job 3 -->
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <span class="timeline-date">Aug 2013 - Oct 2017</span>
+                    <h3 class="timeline-role">Senior Manager Mobile Solutions</h3>
+                    <div class="timeline-company">GS1 Germany GmbH, Cologne</div>
+                    <ul class="timeline-desc">
+                        <li>Provided strategy consulting in Digital & Mobile Commerce.</li>
+                        <li>Led mobile commerce projects in FMCG and retail.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center;">
+                <h2 class="section-title">Education & <span>Skills</span></h2>
+                <p style="color: var(--text-muted);">Post Graduate Program in AI & ML | UT Austin (May 2025 – Feb 2026)</p>
+            </div>
+
+            <div class="skills-wrapper reveal">
+                <div class="skill-category">Core Competencies</div>
+                <span class="skill-tag">AI Enablement</span>
+                <span class="skill-tag">Prompt Engineering</span>
+                <span class="skill-tag">Generative AI (LLMs, RAG)</span>
+                <span class="skill-tag">Responsible AI & Ethics</span>
+                <span class="skill-tag">Digital Transformation</span>
+                <span class="skill-tag">Agile Leadership</span>
+                <span class="skill-tag">Learning: Vibe-Coding</span>
+                
+                <div class="skill-category">Tools of Choice</div>
+                <span class="skill-tag">ChatGPT</span>
+                <span class="skill-tag">n8n</span>
+                <span class="skill-tag">GitHub Copilot</span>
+                <span class="skill-tag">Gemini</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-cta reveal">
+            <h2>Ready to drive the future?</h2>
+            <a href="mailto:andre.gerecke@rwe.com" class="btn btn-primary">Let's Connect</a>
+            <div class="footer-copy">
+                &copy; 2025 Andre Gerecke. Built with AI assistance.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Custom Cursor Logic
+        const cursorDot = document.querySelector('.cursor-dot');
+        const cursorOutline = document.querySelector('.cursor-outline');
+        
+        window.addEventListener('mousemove', (e) => {
+            const posX = e.clientX;
+            const posY = e.clientY;
+            
+            // Dot follows instantly
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+            
+            // Outline follows with delay (animation handled by CSS transition)
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Hover effect for links
+        document.querySelectorAll('a, .btn, .skill-tag').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
+        });
+
+        // 2. Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const elementVisible = 100;
+            
+            revealElements.forEach((reveal) => {
+                const elementTop = reveal.getBoundingClientRect().top;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+
+        // 3. Number Counter Animation
+        const counters = document.querySelectorAll('.metric-item h3');
+        let hasCounted = false;
+
+        const startCounters = () => {
+            const section = document.querySelector('.metrics-bar');
+            const sectionTop = section.getBoundingClientRect().top;
+            
+            if (sectionTop < window.innerHeight && !hasCounted) {
+                hasCounted = true;
+                counters.forEach(counter => {
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 2000; // 2 seconds
+                    const increment = target / (duration / 16); // 60fps
+                    
+                    let current = 0;
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.innerText = Math.ceil(current) + (target > 100 ? '+' : '');
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.innerText = target + (target > 100 ? '+' : '');
+                        }
+                    };
+                    updateCounter();
+                });
+            }
+        };
+        window.addEventListener('scroll', startCounters);
+
+        // Initial trigger
+        revealOnScroll();
+    </script>
+</body>
+</html>
