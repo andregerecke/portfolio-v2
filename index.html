@@ -2,787 +2,544 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andre Gerecke | AI Enablement Leader</title>
-    <meta name="description" content="Driving Innovation Through AI Leadership. Portfolio of Andre Gerecke.">
-    
-    <!-- Fonts -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#050a14">
+    <title>Andre Gerecke | AI Strategy, Enablement &amp; Implementation</title>
+    <meta name="description" content="Andre Gerecke: 16+ years in digital transformation. Connecting AI strategy, hands-on enablement and business-led implementation at RWE Renewables Europe &amp; Australia.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Andre Gerecke | Turning AI strategy into business impact">
+    <meta property="og:description" content="AI strategy, practical enablement and business-led implementation. Explore selected achievements, success cases and experience.">
+    <meta property="og:image" content="https://andregerecke.github.io/portfolio-v2/assets/profile.png">
+    <meta property="og:url" content="https://andregerecke.github.io/portfolio-v2/">
+    <link rel="canonical" href="https://andregerecke.github.io/portfolio-v2/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
     <style>
-        /* --- 1. DESIGN SYSTEM & VARIABLES --- */
         :root {
-            /* Palette */
+            color-scheme: dark;
             --bg-dark: #050a14;
-            --bg-card: rgba(255, 255, 255, 0.03);
-            --bg-card-hover: rgba(255, 255, 255, 0.07);
-            
-            --primary-blue: #1D4477;
-            --accent-cyan: #40B9B7;
-            --accent-glow: rgba(64, 185, 183, 0.5);
-            
+            --bg-card: rgba(255,255,255,.025);
+            --primary-blue: #1d4477;
+            --accent-cyan: #40b9b7;
             --text-main: #e6f1ff;
-            --text-muted: #94a3b8;
-            --text-accent: #40B9B7;
-
-            /* Typography */
+            --text-muted: #a0afc4;
+            --border: 1px solid rgba(255,255,255,.1);
             --font-display: 'Outfit', sans-serif;
             --font-body: 'Plus Jakarta Sans', sans-serif;
-
-            /* Spacing & Layout */
-            --container-width: 1200px;
-            --section-spacing: 140px;
-            
-            /* Effects */
-            --glass-border: 1px solid rgba(255, 255, 255, 0.1);
-            --glass-blur: blur(12px);
-            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);
+            --ease: cubic-bezier(.23,1,.32,1);
         }
-
-        /* --- 2. RESET & BASE --- */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { scroll-behavior: smooth; cursor: none; } /* Custom cursor enabled */
-        
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-            position: relative;
-        }
-
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 104px; }
+        body { background: var(--bg-dark); color: var(--text-main); font-family: var(--font-body); line-height: 1.7; }
         ::selection { background: var(--accent-cyan); color: var(--bg-dark); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg-dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary-blue); border-radius: 4px; }
-
-        a { text-decoration: none; color: inherit; cursor: none; }
+        a { color: inherit; text-decoration: none; }
+        button, a, summary { -webkit-tap-highlight-color: rgba(64,185,183,.15); }
+        button { font: inherit; }
+        a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent-cyan); outline-offset: 6px; border-radius: 4px; }
+        img { display: block; max-width: 100%; }
         ul { list-style: none; }
-
-        /* --- 3. CUSTOM CURSOR --- */
-        .cursor-dot, .cursor-outline {
-            position: fixed;
-            top: 0; left: 0;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            z-index: 9999;
-            pointer-events: none;
-        }
-        .cursor-dot {
-            width: 8px; height: 8px;
-            background-color: var(--accent-cyan);
-        }
-        .cursor-outline {
-            width: 40px; height: 40px;
-            border: 1px solid var(--accent-cyan);
-            transition: width 0.2s, height 0.2s, background-color 0.2s;
-        }
-        /* Hover state for cursor */
-        body.hovering .cursor-outline {
-            width: 60px; height: 60px;
-            background-color: rgba(64, 185, 183, 0.1);
-            border-color: transparent;
-        }
-
-        /* --- 4. UTILITIES --- */
-        .container {
-            width: 90%;
-            max-width: var(--container-width);
-            margin: 0 auto;
-        }
-        
-        .section { padding: var(--section-spacing) 0; position: relative; }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, var(--accent-cyan) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s var(--ease-smooth);
-        }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* --- 5. NAVIGATION --- */
-        .navbar {
-            position: fixed;
-            top: 0; left: 0; width: 100%;
-            padding: 20px 0;
-            z-index: 100;
-            transition: all 0.3s;
-            background: rgba(5, 10, 20, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        
-        .nav-container {
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-display);
-            font-weight: 800;
-            font-size: 1.5rem;
-            letter-spacing: -0.5px;
-        }
-        .logo span { color: var(--accent-cyan); }
-
-        .nav-links { display: flex; gap: 40px; }
-        .nav-link {
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            position: relative;
-            transition: color 0.3s;
-        }
-        .nav-link:hover { color: var(--accent-cyan); }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
-            background: var(--accent-cyan); transition: width 0.3s var(--ease-smooth);
-        }
-        .nav-link:hover::after { width: 100%; }
-
-        /* --- 6. HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 80px;
-        }
-
-        /* Animated Background Grid */
-        .hero-bg {
-            position: absolute; inset: 0; z-index: -1;
-            background: 
-                radial-gradient(circle at 15% 50%, rgba(29, 68, 119, 0.25), transparent 25%),
-                radial-gradient(circle at 85% 30%, rgba(64, 185, 183, 0.15), transparent 25%);
-        }
-        .grid-lines {
-            position: absolute; width: 200%; height: 200%; top: -50%; left: -50%;
-            background-image: 
-                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(1000px) rotateX(60deg) translateY(0);
-            animation: gridScroll 20s linear infinite;
-            mask-image: linear-gradient(to bottom, transparent, black 20%, black 80%, transparent);
-        }
-        @keyframes gridScroll { 100% { transform: perspective(1000px) rotateX(60deg) translateY(50px); } }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .hero-tag {
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 30px;
-            background: rgba(64, 185, 183, 0.1);
-            border: 1px solid rgba(64, 185, 183, 0.3);
-            color: var(--accent-cyan);
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 24px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 6vw, 5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 24px;
-            letter-spacing: -2px;
-        }
-
-        .hero-bio {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            max-width: 540px;
-            margin-bottom: 40px;
-        }
-
-        .cta-group { display: flex; gap: 20px; }
-
-        .btn {
-            padding: 16px 32px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-family: var(--font-display);
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--accent-cyan);
-            color: var(--bg-dark);
-        }
-        .btn-primary::before {
-            content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%;
-            background: white; z-index: -1; transition: width 0.3s var(--ease-smooth);
-            opacity: 0.2;
-        }
-        .btn-primary:hover::before { width: 100%; }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--text-main);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        .btn-secondary:hover {
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-        }
-
-        /* Profile Image Container */
-        .profile-wrapper {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        .profile-img-box {
-            width: 400px; height: 500px;
-            position: relative;
-            z-index: 2;
-        }
-        .profile-img {
-            width: 100%; height: 100%;
-            object-fit: cover;
-            border-radius: 20px;
-            filter: grayscale(20%) contrast(1.1);
-            transition: filter 0.5s;
-        }
-        .profile-wrapper:hover .profile-img { filter: grayscale(0%); }
-        
-        /* Decorative Frame */
-        .profile-frame {
-            position: absolute;
-            inset: -20px;
-            border: 1px solid rgba(64, 185, 183, 0.3);
-            border-radius: 20px;
-            z-index: 1;
-            transition: transform 0.5s var(--ease-elastic);
-        }
-        .profile-wrapper:hover .profile-frame { transform: translate(15px, 15px); }
-
-        /* --- 7. METRICS SECTION --- */
-        .metrics-bar {
-            background: rgba(255,255,255,0.02);
-            border-top: var(--glass-border);
-            border-bottom: var(--glass-border);
-            padding: 60px 0;
-        }
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
-        .metric-item h3 {
-            font-family: var(--font-display);
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--accent-cyan);
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-        .metric-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        .metric-item .metric-desc {
-            font-size: 0.85rem;
-            text-transform: none;
-            letter-spacing: 0;
-            font-weight: 400;
-            margin-top: 12px;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
-
-        /* --- 8. SUCCESS CASES (Cards) --- */
-        .section-header { margin-bottom: 80px; }
-        .section-title {
-            font-family: var(--font-display);
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
+        .container { width: min(90%,1200px); margin-inline: auto; }
+        .section { padding-block: 112px; scroll-margin-top: 80px; }
+        .section-header { margin-bottom: 48px; max-width: 720px; }
+        .section-kicker { color: var(--accent-cyan); font-size: .73rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 12px; }
+        .section-title { font-family: var(--font-display); font-size: clamp(2rem,3.5vw,2.75rem); font-weight: 600; line-height: 1.2; letter-spacing: -.8px; margin-bottom: 18px; }
         .section-title span { color: var(--accent-cyan); }
-        
-        .cards-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+        .section-intro { color: var(--text-muted); max-width: 650px; font-size: .98rem; }
+        .text-gradient { background: linear-gradient(135deg,#fff,var(--accent-cyan)); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .skip-link { position: fixed; top: -80px; left: 20px; background: var(--accent-cyan); color: var(--bg-dark); padding: 12px 20px; z-index: 1000; }
+        .skip-link:focus { top: 16px; }
+        .navbar { position: fixed; inset: 0 0 auto; padding: 20px 0; z-index: 100; background: rgba(5,10,20,.9); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.06); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+        .logo { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; letter-spacing: -.5px; }
+        .logo span { color: var(--accent-cyan); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-link { font-size: .84rem; color: var(--text-muted); transition: color .2s; }
+        .nav-link:hover { color: var(--accent-cyan); }
+        .nav-toggle { display: none; color: var(--text-main); border: var(--border); background: transparent; border-radius: 5px; padding: 7px 13px; }
+        .hero { min-height: min(900px,100svh); display: flex; align-items: center; position: relative; isolation: isolate; overflow: hidden; padding: 150px 0 100px; }
+        .hero-bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: radial-gradient(circle at 15% 50%,rgba(29,68,119,.25),transparent 34%),radial-gradient(circle at 85% 30%,rgba(64,185,183,.12),transparent 30%); }
+        .grid-lines { position: absolute; inset: -50%; background-image: linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px); background-size: 50px 50px; transform: perspective(1000px) rotateX(60deg); animation: gridScroll 24s linear infinite; mask-image: linear-gradient(to bottom,transparent,black 30%,black 70%,transparent); }
+        @keyframes gridScroll { to { transform: perspective(1000px) rotateX(60deg) translateY(50px); } }
+        .hero-content { display: grid; grid-template-columns: 1.25fr .85fr; gap: 60px; align-items: center; }
+        .hero-tag { display: inline-block; border: 1px solid rgba(64,185,183,.3); background: rgba(64,185,183,.07); border-radius: 30px; color: var(--accent-cyan); padding: 8px 14px; font-size: .7rem; font-weight: 600; letter-spacing: .09em; text-transform: uppercase; margin-bottom: 26px; }
+        h1 { font-family: var(--font-display); font-size: clamp(3rem,5.35vw,4.6rem); font-weight: 800; line-height: 1.08; letter-spacing: -2px; margin-bottom: 26px; }
+        .hero-bio { color: var(--text-muted); font-size: 1.04rem; max-width: 590px; margin-bottom: 32px; line-height: 1.85; }
+        .hero-bio strong { color: var(--text-main); font-weight: 500; }
+        .cta-group { display: flex; flex-wrap: wrap; gap: 14px; }
+        .btn { display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 14px 24px; border-radius: 5px; font-family: var(--font-display); font-weight: 600; letter-spacing: .2px; font-size: .97rem; transition: background .2s,color .2s,border-color .2s,transform .2s; }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: var(--accent-cyan); color: var(--bg-dark); border: 1px solid var(--accent-cyan); }
+        .btn-primary:hover { background: #64d1ce; border-color: #64d1ce; }
+        .btn-secondary { background: transparent; border: 1px solid rgba(255,255,255,.22); }
+        .btn-secondary:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); }
+        .btn svg { width: 17px; height: 17px; flex: 0 0 auto; }
+        .hero-note { color: var(--text-muted); font-size: .72rem; margin-top: 18px; letter-spacing: .025em; }
+        .profile-wrapper { position: relative; width: 100%; max-width: 400px; justify-self: end; }
+        .profile-frame { position: absolute; inset: -18px; border: 1px solid rgba(64,185,183,.3); border-radius: 21px; transform: translate(8px,8px); }
+        .profile-img-box { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 17px; }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(15%) contrast(1.04); transition: filter .4s; }
+        .profile-wrapper:hover .profile-img { filter: none; }
+        .metrics-bar { background: rgba(255,255,255,.018); border-top: var(--border); border-bottom: var(--border); padding: 50px 0; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 40px; text-align: center; }
+        .metric-item + .metric-item { border-left: var(--border); padding-left: 25px; }
+        .metric-item h3 { font: 700 3.4rem/1.1 var(--font-display); color: var(--accent-cyan); margin-bottom: 12px; font-variant-numeric: tabular-nums; }
+        .metric-label { font-size: .74rem; letter-spacing: .1em; text-transform: uppercase; font-weight: 600; }
+        .metric-desc { color: var(--text-muted); font-size: .8rem; margin: 10px auto 0; max-width: 275px; line-height: 1.7; }
+        .cards-container { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 24px; align-items: stretch; }
+        .glass-card { border: var(--border); background: var(--bg-card); border-radius: 15px; padding: 30px; transition: border-color .3s,background .3s,transform .3s; min-width: 0; }
+        .glass-card:hover { border-color: rgba(64,185,183,.6); background: rgba(255,255,255,.045); transform: translateY(-4px); }
+        .case-card { display: flex; flex-direction: column; }
+        .card-badge { color: var(--accent-cyan); font-size: .67rem; letter-spacing: .13em; text-transform: uppercase; font-weight: 600; display: block; margin-bottom: 18px; }
+        .glass-card h3 { font: 600 1.35rem/1.35 var(--font-display); margin-bottom: 15px; letter-spacing: -.2px; }
+        .glass-card p { color: var(--text-muted); font-size: .88rem; line-height: 1.85; margin-bottom: 22px; }
+        .impact-box { background: rgba(64,185,183,.055); border-left: 2px solid var(--accent-cyan); padding: 15px 17px; border-radius: 0 6px 6px 0; margin-top: auto; }
+        .impact-box strong { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; color: var(--accent-cyan); }
+        .impact-box span { font-size: .84rem; line-height: 1.75; color: #c8d5e5; }
+        .case-note { margin-top: 22px; color: var(--text-muted); font-size: .75rem; }
+        .approach-section { border-top: 1px solid rgba(255,255,255,.055); background: linear-gradient(160deg,rgba(29,68,119,.09),transparent 60%); }
+        .achievement-index { font: 400 .9rem var(--font-display); color: var(--accent-cyan); margin-bottom: 22px; display: block; opacity: .8; }
+        details { margin-top: 12px; border-top: var(--border); }
+        summary { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; padding: 18px 0 2px; cursor: pointer; font-size: .8rem; font-weight: 500; list-style: none; color: var(--text-main); }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; color: var(--accent-cyan); font-size: 1.1rem; line-height: 1; }
+        details[open] summary::after { content: '−'; }
+        details .detail-content { padding-top: 17px; }
+        .glass-card .detail-content p { font-size: .81rem; margin-bottom: 12px; }
+        .detail-list { display: grid; gap: 13px; }
+        .detail-list li { color: var(--text-muted); font-size: .81rem; line-height: 1.8; padding-left: 15px; position: relative; }
+        .detail-list li::before { content: '·'; color: var(--accent-cyan); position: absolute; left: 0; }
+        .detail-list strong { color: #cbd9e8; font-weight: 500; }
+        .quote-section { padding: 80px 0; border-top: 1px solid rgba(255,255,255,.055); border-bottom: 1px solid rgba(255,255,255,.055); background: linear-gradient(90deg,rgba(29,68,119,.12),transparent); }
+        .quote-inner { max-width: 800px; text-align: center; }
+        .quote-mark { font: 500 4rem/.8 var(--font-display); color: var(--accent-cyan); opacity: .65; margin-bottom: 20px; }
+        blockquote p { font: 400 clamp(1.4rem,2.7vw,1.85rem)/1.6 var(--font-display); }
+        blockquote footer { color: var(--text-muted); font-size: .78rem; margin-top: 22px; }
+        .timeline { max-width: 860px; margin-inline: auto; border-left: 1px solid rgba(255,255,255,.16); }
+        .timeline-item { padding-left: 40px; position: relative; padding-bottom: 50px; }
+        .timeline-item:last-child { padding-bottom: 0; }
+        .timeline-item::before { content: ''; position: absolute; left: -6px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg-dark); border: 2px solid var(--accent-cyan); }
+        .timeline-date { color: var(--accent-cyan); font-size: .78rem; font-weight: 500; display: block; margin-bottom: 9px; }
+        .timeline-role { font: 600 1.3rem/1.4 var(--font-display); margin-bottom: 4px; }
+        .timeline-company { color: var(--text-muted); font-size: .83rem; margin-bottom: 18px; }
+        .timeline-desc { display: grid; gap: 12px; }
+        .timeline-desc li { color: #c5d2e2; font-size: .87rem; padding-left: 19px; position: relative; line-height: 1.85; }
+        .timeline-desc li::before { content: '›'; position: absolute; left: 0; color: var(--accent-cyan); }
+        .expertise-section { background: rgba(255,255,255,.012); border-block: 1px solid rgba(255,255,255,.055); }
+        .expertise-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+        .expertise-card h3 { font-size: 1.2rem; }
+        .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+        .skill-tag { display: inline-block; border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.025); border-radius: 100px; padding: 6px 12px; color: #c8d5e5; font-size: .73rem; line-height: 1.5; }
+        .expertise-card .detail-content p { margin-bottom: 0; }
+        .languages { display: grid; gap: 11px; margin-top: 20px; }
+        .languages li { display: flex; justify-content: space-between; gap: 18px; font-size: .84rem; padding-bottom: 11px; border-bottom: 1px solid rgba(255,255,255,.06); }
+        .languages span { color: var(--text-muted); text-align: right; }
+        .education-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 38px; align-items: start; }
+        .featured-education { border: 1px solid rgba(64,185,183,.25); background: rgba(64,185,183,.035); }
+        .education-date { color: var(--accent-cyan); font-size: .74rem; margin-bottom: 12px; }
+        .education-name { font: 500 1.05rem/1.5 var(--font-display); margin-bottom: 6px; }
+        .education-school { font-size: .84rem; color: var(--text-muted); }
+        .education-list { display: grid; gap: 28px; padding-top: 3px; }
+        .education-entry { padding-bottom: 27px; border-bottom: var(--border); }
+        .education-entry:last-child { padding-bottom: 0; border-bottom: 0; }
+        .credentials { margin-top: 38px; padding-top: 30px; border-top: var(--border); }
+        .credentials h3 { font: 500 1rem var(--font-display); margin-bottom: 17px; }
+        .contact-footer { background: linear-gradient(to top,#02040a,var(--bg-dark)); text-align: center; padding: 95px 0 35px; }
+        .contact-footer h2 { font: 600 clamp(2rem,4vw,3rem)/1.2 var(--font-display); letter-spacing: -.8px; margin-bottom: 18px; }
+        .contact-intro { color: var(--text-muted); max-width: 560px; margin: 0 auto 30px; font-size: .92rem; }
+        .contact-footer .cta-group { justify-content: center; }
+        .contact-email { display: inline-block; color: var(--text-muted); font-size: .82rem; margin-top: 23px; }
+        .contact-email:hover { color: var(--accent-cyan); }
+        .footer-copy { color: var(--text-muted); font-size: .7rem; margin-top: 65px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,.06); opacity: .8; }
+        .motion-ready .reveal { opacity: 0; transform: translateY(18px); transition: opacity .65s var(--ease),transform .65s var(--ease); }
+        .motion-ready .reveal.active { opacity: 1; transform: none; }
+        @media (max-width: 1050px) {
+            .hero-content { gap: 36px; }
+            .profile-wrapper { max-width: 320px; }
+            .glass-card { padding: 25px; }
+            .cards-container { gap: 18px; }
+            .nav-links { gap: 24px; }
         }
-
-        .glass-card {
-            background: var(--bg-card);
-            border: var(--glass-border);
-            border-radius: 16px;
-            padding: 40px;
-            transition: all 0.4s var(--ease-smooth);
-            position: relative;
-            overflow: hidden;
-        }
-        .glass-card:hover {
-            transform: translateY(-10px);
-            background: var(--bg-card-hover);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
-        }
-
-        .card-badge {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--accent-cyan);
-            margin-bottom: 20px;
-            display: block;
-            font-weight: 700;
-        }
-        
-        .glass-card h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .glass-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .impact-box {
-            background: rgba(64, 185, 183, 0.05);
-            padding: 15px;
-            border-radius: 8px;
-            border-left: 3px solid var(--accent-cyan);
-        }
-        .impact-box strong { color: var(--text-main); display: block; margin-bottom: 4px; }
-        .impact-box span { font-size: 0.9rem; color: var(--text-muted); }
-
-        /* --- 9. EXPERIENCE (Timeline) --- */
-        .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .timeline::before {
-            content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 2px;
-            background: rgba(255,255,255,0.1);
-        }
-
-        .timeline-item {
-            padding-left: 50px;
-            margin-bottom: 60px;
-            position: relative;
-        }
-        .timeline-dot {
-            position: absolute; left: -6px; top: 0;
-            width: 14px; height: 14px;
-            background: var(--bg-dark);
-            border: 2px solid var(--accent-cyan);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        .timeline-item:hover .timeline-dot { background: var(--accent-cyan); box-shadow: 0 0 15px var(--accent-cyan); }
-
-        .timeline-date {
-            font-family: var(--font-display);
-            color: var(--accent-cyan);
-            font-weight: 600;
-            margin-bottom: 8px;
-            display: block;
-        }
-        .timeline-role { font-size: 1.25rem; font-weight: 700; margin-bottom: 5px; }
-        .timeline-company { color: var(--text-muted); margin-bottom: 20px; font-size: 0.95rem; }
-        .timeline-desc li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-            color: #cbd5e1;
-            font-size: 0.95rem;
-        }
-        .timeline-desc li::before {
-            content: '▹'; position: absolute; left: 0; color: var(--accent-cyan);
-        }
-
-        /* --- 10. SKILLS (Tag Cloud) --- */
-        .skills-wrapper {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .skill-tag {
-            padding: 10px 24px;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 100px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            cursor: none;
-        }
-        .skill-tag:hover {
-            background: rgba(64, 185, 183, 0.1);
-            border-color: var(--accent-cyan);
-            color: var(--accent-cyan);
-            transform: translateY(-3px);
-        }
-        .skill-category {
-            width: 100%;
-            text-align: center;
-            margin: 30px 0 15px;
-            color: var(--text-muted);
-            font-family: var(--font-display);
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-        }
-
-        /* --- 11. FOOTER --- */
-        footer {
-            text-align: center;
-            padding: 100px 0 40px;
-            background: linear-gradient(to top, #02040a, var(--bg-dark));
-        }
-        .footer-cta h2 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            margin-bottom: 30px;
-        }
-        .footer-copy {
-            margin-top: 80px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            opacity: 0.6;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 992px) {
+        @media (max-width: 820px) {
+            .section { padding-block: 80px; }
+            .hero { min-height: auto; padding: 155px 0 85px; }
             .hero-content { grid-template-columns: 1fr; text-align: center; }
-            .hero-bio { margin: 0 auto 40px; }
+            h1 { font-size: clamp(2.8rem,7.8vw,4.4rem); }
+            .hero-bio { margin-inline: auto; }
             .cta-group { justify-content: center; }
-            .profile-wrapper { display: none; } /* Hide image on mobile for cleaner look */
-            h1 { font-size: 3rem; }
-            .nav-links { display: none; }
+            .profile-wrapper { display: none; }
+            .hero-tag { font-size: .65rem; }
+            .cards-container { grid-template-columns: 1fr; gap: 20px; }
+            .glass-card { padding: 30px; }
+            .impact-box { margin-top: 0; }
+            .section-header { margin-bottom: 35px; }
+            .education-grid { grid-template-columns: 1fr; }
+            .metrics-grid { gap: 20px; }
+            .metric-item + .metric-item { padding-left: 10px; }
+            .metric-item h3 { font-size: 2.8rem; }
+            .metric-label { font-size: .65rem; }
+            .metric-desc { font-size: .75rem; }
+        }
+        @media (max-width: 640px) {
+            .navbar { padding-block: 15px; }
+            .nav-container { flex-wrap: wrap; gap: 12px; }
+            .nav-links { width: 100%; justify-content: space-between; gap: 10px; }
+            .nav-link { font-size: .73rem; }
+            .menu-ready .nav-toggle { display: inline-block; }
+            .menu-ready .nav-links { display: none; }
+            .menu-ready .nav-links[data-open="true"] { display: flex; flex-direction: column; align-items: stretch; padding: 18px 0 5px; gap: 0; }
+            .menu-ready .nav-links[data-open="true"] a { display: block; padding: 11px 5px; font-size: .9rem; }
+            .hero { padding-top: 125px; }
+            h1 { letter-spacing: -1.4px; font-size: clamp(2.7rem,10vw,3.5rem); }
+            .hero-bio { font-size: .92rem; line-height: 1.9; }
+            .hero-tag { font-size: .56rem; letter-spacing: .07em; padding: 8px 11px; }
+            .btn { padding: 13px 18px; font-size: .88rem; gap: 8px; }
+            .hero-note { font-size: .66rem; }
+            .metrics-grid { grid-template-columns: 1fr; gap: 28px; }
+            .metric-item + .metric-item { padding: 28px 0 0; border-left: 0; border-top: var(--border); }
+            .metric-item h3 { font-size: 3rem; }
+            .metric-label { font-size: .74rem; }
+            .metric-desc { max-width: 285px; font-size: .79rem; }
+            .metrics-bar { padding-block: 38px; }
+            .expertise-grid { grid-template-columns: 1fr; }
+            .glass-card { padding: 26px; }
+            .section-kicker { font-size: .66rem; }
+            .section-intro { font-size: .9rem; }
+            .quote-section { padding: 60px 0; }
+            .timeline-item { padding-left: 25px; padding-bottom: 40px; }
+            .timeline-role { font-size: 1.17rem; }
+            .timeline-desc li { font-size: .81rem; }
+            .timeline-company { font-size: .76rem; }
+            .languages li { font-size: .8rem; }
+            .contact-footer { padding-top: 75px; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation: none !important; transition: none !important; }
+            .motion-ready .reveal { opacity: 1; transform: none; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Custom Cursor -->
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar" aria-label="Main navigation">
         <div class="container nav-container">
-            <a href="#" class="logo">Andre<span>.</span></a>
-            <ul class="nav-links">
+            <a href="#home" class="logo" aria-label="Andre Gerecke, home">Andre<span>.</span></a>
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#impact" class="nav-link">Impact</a></li>
+                <li><a href="#approach" class="nav-link">Approach</a></li>
                 <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#skills" class="nav-link">Expertise</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg"><div class="grid-lines"></div></div>
-        <div class="container hero-content">
-            <div class="hero-text reveal active">
-                <span class="hero-tag">AI Enablement & Implementation</span>
-                <h1>Driving Innovation<br><span class="text-gradient">Through AI Leadership</span></h1>
-                <p class="hero-bio">
-                    Digital Transformation leader with 15+ years of experience driving AI adoption and automation in enterprise settings. Currently leading the AI@OPEA Initiative, creating Generative AI Personas, and partnering with IT/OT to improve AI solutions.
-                </p>
-                <div class="cta-group">
-                    <a href="#impact" class="btn btn-primary">View Success Cases</a>
-                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+    <main id="main">
+        <section class="hero" id="home" aria-labelledby="hero-title">
+            <div class="hero-bg" aria-hidden="true"><div class="grid-lines"></div></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <span class="hero-tag">AI Strategy &middot; Enablement &middot; Implementation</span>
+                    <h1 id="hero-title">Turning AI strategy<br><span class="text-gradient">into business impact.</span></h1>
+                    <p class="hero-bio">I&rsquo;m <strong>Andre Gerecke</strong>, a digital transformation professional with <strong>16+ years of experience</strong>. At RWE Renewables Europe &amp; Australia, I connect AI strategy, practical enablement and business-led implementation.</p>
+                    <div class="cta-group">
+                        <a href="#impact" class="btn btn-primary">Explore my impact <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a>
+                        <a href="assets/Andre_Gerecke_CV_2026.pdf" class="btn btn-secondary" download>Download CV <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M5 17v4h14v-4"/></svg></a>
+                    </div>
+                    <p class="hero-note">Senior Digital Transformation Manager &nbsp;&middot;&nbsp; Renewables</p>
+                </div>
+                <div class="profile-wrapper">
+                    <div class="profile-frame" aria-hidden="true"></div>
+                    <div class="profile-img-box"><img src="assets/profile.png" alt="Portrait of Andre Gerecke" class="profile-img" width="400" height="500" fetchpriority="high"></div>
                 </div>
             </div>
-            <div class="profile-wrapper reveal">
-                <div class="profile-frame"></div>
-                <div class="profile-img-box">
-                    <img src="assets/profile.png" alt="Andre Gerecke" class="profile-img">
+        </section>
+        <section class="metrics-bar" aria-label="Selected achievements">
+            <div class="container metrics-grid">
+                <div class="metric-item">
+                    <h3 data-target="700" data-suffix="+">700+</h3>
+                    <p class="metric-label">Colleagues reached</p>
+                    <p class="metric-desc">Through business-specific Copilot workshops and rapid-prototyping sessions.</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-target="28">28</h3>
+                    <p class="metric-label">AI Champions</p>
+                    <p class="metric-desc">A cross-functional network for peer learning and practical AI adoption.</p>
+                </div>
+                <div class="metric-item">
+                    <h3 data-target="50" data-prefix="~">~50</h3>
+                    <p class="metric-label">Hackathon participants</p>
+                    <p class="metric-desc">Across five groups, with Microsoft, in September 2026.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Metrics Section -->
-    <div class="metrics-bar">
-        <div class="container metrics-grid">
-            <div class="metric-item reveal">
-                <h3 data-target="350">0</h3>
-                <p>Colleagues Upskilled</p>
-                <p class="metric-desc">Delivered 20+ AI workshops with a 92% satisfaction rate, fostering a culture of AI adoption.</p>
+        </section>
+        <section id="impact" class="section" aria-labelledby="impact-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker">Practical applications</p>
+                    <h2 class="section-title" id="impact-title">Success cases <span>&amp; impact</span></h2>
+                    <p class="section-intro">AI applied to everyday business challenges in procurement, contract review and documentation, with case-specific reported benefits.</p>
+                </div>
+                <div class="cards-container">
+                    <article class="glass-card case-card reveal">
+                        <span class="card-badge">Procurement</span>
+                        <h3>Marge the Market Expert</h3>
+                        <p>Gives procurement teams faster access to negotiation intelligence. Marge researches macroeconomics and supply-chain risks to support preparation and negotiation.</p>
+                        <div class="impact-box"><strong>Reported impact</strong><span>&euro;200k&ndash;&euro;500k in better negotiation results.<br>~30 days saved &middot; 15% time reduction.</span></div>
+                    </article>
+                    <article class="glass-card case-card reveal">
+                        <span class="card-badge">Legal &amp; real estate</span>
+                        <h3>Contract Validator</h3>
+                        <p>Supports the review of real-estate contracts and cover sheets in DocumentDialogue, helping Real Estate Accounting validate documents more efficiently.</p>
+                        <div class="impact-box"><strong>Reported impact</strong><span>~33% less contract-validation time.<br>43 days saved.</span></div>
+                    </article>
+                    <article class="glass-card case-card reveal">
+                        <span class="card-badge">Development IT</span>
+                        <h3>Typo</h3>
+                        <p>Turns working material into consistent, well-written documentation, applying grammar checks and standard templates to reduce manual editing.</p>
+                        <div class="impact-box"><strong>Reported impact</strong><span>Consistent, standardised documentation.<br>~29 days saved &middot; 75% time reduction.</span></div>
+                    </article>
+                </div>
+                <p class="case-note">Time-saving figures are estimates for the individual use cases.</p>
             </div>
-            <div class="metric-item reveal">
-                <h3 data-target="15">0</h3>
-                <p>Use Cases Implemented</p>
-                <p class="metric-desc">Facilitated ideation and implementation of 15 success cases with efficiency gains.</p>
+        </section>
+        <section id="approach" class="section approach-section" aria-labelledby="approach-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker">Selected achievements</p>
+                    <h2 class="section-title" id="approach-title">Building the conditions <span>for AI to scale.</span></h2>
+                    <p class="section-intro">My work connects business priorities, people and technology, from a clear direction to practical experimentation and implementation.</p>
+                </div>
+                <div class="cards-container">
+                    <article class="glass-card reveal">
+                        <span class="achievement-index" aria-hidden="true">01 / DIRECTION</span>
+                        <h3>Strategy &amp; scaling</h3>
+                        <p>Conceived the OPEA AI Strategy 2026 and designed the 2027 AI Enablement and Scaling Concept, with a roadmap through 2029.</p>
+                        <details>
+                            <summary>Explore the scaling approach</summary>
+                            <div class="detail-content">
+                                <ul class="detail-list">
+                                    <li>A <strong>four-level AI maturity model</strong> to focus support on business needs.</li>
+                                    <li>A <strong>six-phase methodology</strong> linking capability building with use-case implementation.</li>
+                                    <li>Targeted <strong>six-to-eight-week AI Value Waves</strong>, designed around practical use cases and evidence-based impact measurement.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </article>
+                    <article class="glass-card reveal">
+                        <span class="achievement-index" aria-hidden="true">02 / PEOPLE</span>
+                        <h3>Enablement &amp; community</h3>
+                        <p>Reached 700+ colleagues through hands-on Copilot workshops and rapid prototyping. Established a network of 28 AI Champions to help adoption spread.</p>
+                        <details>
+                            <summary>How adoption takes hold</summary>
+                            <div class="detail-content">
+                                <ul class="detail-list">
+                                    <li>Developed an <strong>AI Prompting Framework</strong> for practical, repeatable use.</li>
+                                    <li>Designed <strong>business-specific workshops and coaching</strong>, including opportunities to create Copilot agents.</li>
+                                    <li>Connected Champions through <strong>peer learning, reusable prompts and agents</strong>, use-case identification, workshops and hackathons.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </article>
+                    <article class="glass-card reveal">
+                        <span class="achievement-index" aria-hidden="true">03 / DELIVERY</span>
+                        <h3>Experimentation &amp; implementation</h3>
+                        <p>Co-organised a Copilot and Copilot Studio hackathon with Microsoft: approximately 50 business participants, five groups and structured follow-up pathways.</p>
+                        <details>
+                            <summary>Explore selected projects</summary>
+                            <div class="detail-content">
+                                <ul class="detail-list">
+                                    <li><strong>UK Control Room:</strong> an early shift-handover agent workflow prototype from the September 2026 hackathon.</li>
+                                    <li><strong>NPV.OptimAIzer:</strong> contributed through Design Thinking-inspired workshops with Development EU, Engineering and Operations.</li>
+                                    <li>The AI lighthouse integrates <strong>turbine selection, layout optimisation, wind-resource assessment and financial modelling</strong> to support project-value optimisation.</li>
+                                </ul>
+                            </div>
+                        </details>
+                    </article>
+                </div>
             </div>
-            <div class="metric-item reveal">
-                <h3 data-target="140">0</h3>
-                <p>Days Saved</p>
-                <p class="metric-desc">Estimated annual efficiency gains from implemented AI Personas.</p>
+        </section>
+        <section class="quote-section" aria-label="My approach">
+            <div class="container quote-inner reveal">
+                <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+                <blockquote>
+                    <p>I believe in bringing together business strategy, enablement and implementation to deliver measurable value.</p>
+                    <footer>Andre Gerecke &nbsp;&middot;&nbsp; My approach to AI transformation</footer>
+                </blockquote>
             </div>
-        </div>
-    </div>
-
-    <!-- Success Cases -->
-    <section id="impact" class="section">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Success Cases <span>& Impact</span></h2>
-                <p style="color: var(--text-muted); max-width: 600px;">
-                    The AI@OPEA Initiative is driven by a comprehensive 3-pillar approach: AI Upskilling, Business Impact, and Next Level AI.
-                </p>
+        </section>
+        <section id="experience" class="section" aria-labelledby="experience-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker">16+ years of experience</p>
+                    <h2 class="section-title" id="experience-title">A career in <span>digital transformation.</span></h2>
+                    <p class="section-intro">From international mobile services and digital commerce to enterprise automation and AI in renewables.</p>
+                </div>
+                <div class="timeline">
+                    <article class="timeline-item reveal">
+                        <span class="timeline-date">October 2023 &ndash; Present</span>
+                        <h3 class="timeline-role">Senior Digital Transformation Manager</h3>
+                        <p class="timeline-company">RWE Renewables Europe &amp; Australia GmbH &middot; Essen</p>
+                        <ul class="timeline-desc">
+                            <li>Conceived the OPEA AI Strategy 2026 and supporting enablement portfolio; designed the 2027 scaling concept and roadmap through 2029.</li>
+                            <li>Facilitated AI-centred business-process redesign with Development EU, Engineering and Operations, contributing to NPV.OptimAIzer.</li>
+                            <li>Developed an AI Prompting Framework, reached 700+ colleagues through practical Copilot enablement and established a network of 28 AI Champions.</li>
+                            <li>Co-organised the September 2026 Copilot and Copilot Studio hackathon with Microsoft, supporting early prototypes and structured follow-up.</li>
+                            <li>Guided business teams from ideation through agent implementation, including a Procurement Support Agent that compares market developments with internal procurement information and generates recommendations.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item reveal">
+                        <span class="timeline-date">August 2019 &ndash; September 2023</span>
+                        <h3 class="timeline-role">Senior Digital Expert</h3>
+                        <p class="timeline-company">RWE Renewables GmbH &middot; Essen</p>
+                        <ul class="timeline-desc">
+                            <li>Led digital initiatives delivering high-value MVPs through Lean Startup, Design Thinking and Scrum.</li>
+                            <li>Founded and led the Process Optimization Factory to automate repetitive work, including PDF data extraction with Azure Document Intelligence.</li>
+                            <li>Developed an Agile Innovation Framework for scouting and evaluating digital opportunities; coached business teams in agile ways of working.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item reveal">
+                        <span class="timeline-date">August 2013 &ndash; August 2019</span>
+                        <h3 class="timeline-role">Senior Manager Mobile Solutions</h3>
+                        <p class="timeline-company">GS1 Germany GmbH &middot; Cologne</p>
+                        <ul class="timeline-desc">
+                            <li>Advised on digital and mobile commerce, including couponing, location-based marketing, smart packaging, conversational commerce and AR.</li>
+                            <li>Led mobile commerce projects in FMCG and retail, supported by market analysis and project-concept development.</li>
+                        </ul>
+                    </article>
+                    <article class="timeline-item reveal">
+                        <span class="timeline-date">June 2010 &ndash; July 2013</span>
+                        <h3 class="timeline-role">International Project Manager</h3>
+                        <p class="timeline-company">Venista Ventures GmbH &amp; Co. KG &middot; Cologne</p>
+                        <ul class="timeline-desc">
+                            <li>Managed international roll-outs of mobile services and apps using agile project management.</li>
+                            <li>Improved the app portfolio through product management, business-model evaluation and competitive analysis.</li>
+                        </ul>
+                    </article>
+                </div>
             </div>
-            
-            <div class="cards-container">
-                <!-- Case 1 -->
-                <div class="glass-card reveal">
-                    <span class="card-badge">Procurement</span>
-                    <h3>Marge the Market Expert</h3>
-                    <p>Analyses macroeconomics and supply chain risks via internet research for procurement negotiations.</p>
-                    <div class="impact-box">
-                        <strong>Impact</strong>
-                        <span>Better negotiation results (200k-500k€) & ~30 days saved (15%).</span>
+        </section>
+        <section id="skills" class="section expertise-section" aria-labelledby="skills-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker">Methods, platforms &amp; collaboration</p>
+                    <h2 class="section-title" id="skills-title">Expertise <span>in practice.</span></h2>
+                    <p class="section-intro">A combination of business-led delivery, practical AI methods and the tools to turn ideas into working solutions.</p>
+                </div>
+                <div class="expertise-grid">
+                    <article class="glass-card expertise-card reveal">
+                        <h3>AI methods &amp; agent design</h3>
+                        <p>Translate business needs into useful generative AI applications, from prompting and persona design to RAG use cases and agent workflows.</p>
+                        <ul class="tag-list" aria-label="AI methods"><li class="skill-tag">Generative AI</li><li class="skill-tag">Prompt engineering</li><li class="skill-tag">RAG</li><li class="skill-tag">Persona &amp; agent design</li></ul>
+                        <details><summary>Technical foundations</summary><div class="detail-content"><p>Python, TensorFlow, PyTorch and LangChain. MLOps foundations spanning CI/CD, monitoring and retraining.</p></div></details>
+                    </article>
+                    <article class="glass-card expertise-card reveal">
+                        <h3>Platforms &amp; automation</h3>
+                        <p>Hands-on work with AI assistants, Copilot agents, workflow automation and AI-assisted development.</p>
+                        <ul class="tag-list" aria-label="Selected platforms"><li class="skill-tag">Microsoft 365 Copilot</li><li class="skill-tag">Copilot Studio</li><li class="skill-tag">ChatGPT</li><li class="skill-tag">n8n &amp; Make</li><li class="skill-tag">Power Automate</li></ul>
+                        <details><summary>AI-assisted development &amp; more</summary><div class="detail-content"><p>OpenAI Codex, GitHub Copilot and Claude Code. Other platforms include Claude, Gemini, DeepSeek and Microsoft Power Platform.</p></div></details>
+                    </article>
+                    <article class="glass-card expertise-card reveal">
+                        <h3>Delivery &amp; leadership</h3>
+                        <p>Business-led experimentation, cross-functional facilitation and coaching, supported by agile methods and benefit tracking.</p>
+                        <ul class="tag-list" aria-label="Delivery methods"><li class="skill-tag">Design Thinking</li><li class="skill-tag">Scrum</li><li class="skill-tag">Lean Startup</li><li class="skill-tag">Workshop facilitation</li></ul>
+                        <details><summary>Collaboration &amp; delivery tools</summary><div class="detail-content"><p>Mural, Miro, Azure DevOps, Airtable, Confluence, Microsoft Office and Teams; basic Figma knowledge.</p></div></details>
+                    </article>
+                    <article class="glass-card expertise-card reveal">
+                        <h3>Languages</h3>
+                        <p>Supporting international collaboration across business and technology teams.</p>
+                        <ul class="languages"><li><strong>German</strong><span>Native</span></li><li><strong>English</strong><span>Business fluent &middot; C1</span></li><li><strong>French</strong><span>Business fluent &middot; C1</span></li></ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section id="education" class="section" aria-labelledby="education-title">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-kicker">Continuous development</p>
+                    <h2 class="section-title" id="education-title">Education <span>&amp; credentials</span></h2>
+                </div>
+                <div class="education-grid">
+                    <article class="glass-card featured-education reveal">
+                        <span class="card-badge">Completed February 2026</span>
+                        <h3>Artificial Intelligence &amp; Machine Learning</h3>
+                        <p class="education-school">Post Graduate Program &middot; Business Applications<br>The University of Texas at Austin</p>
+                        <p class="education-date">May 2025 &ndash; February 2026</p>
+                        <p>Hands-on learning across <strong>7 projects and 40+ case studies</strong>, connecting AI and machine-learning methods with business applications.</p>
+                        <details><summary>Explore the programme</summary><div class="detail-content"><p>Python, machine learning, neural networks, computer vision, NLP and generative AI, multimodal AI, recommendation systems, model deployment and MLOps.</p><p>Mentored by industry experts from Microsoft, SAP, IBM and Apple.</p></div></details>
+                    </article>
+                    <div class="education-list reveal">
+                        <article class="education-entry"><p class="education-date">2015 &ndash; 2017</p><h3 class="education-name">M.A., Marketing Management</h3><p class="education-school">European University of Applied Sciences (EUFH)<br>Cologne</p></article>
+                        <article class="education-entry"><p class="education-date">2006 &ndash; 2010</p><h3 class="education-name">B.Sc., International Business</h3><p class="education-school">Pforzheim University of Applied Sciences<br>Double degree with ESCE Paris</p></article>
                     </div>
                 </div>
-                <!-- Case 2 -->
-                <div class="glass-card reveal" style="transition-delay: 0.1s;">
-                    <span class="card-badge">Legal</span>
-                    <h3>Contract Validator</h3>
-                    <p>Enhances validation for real estate contracts and cover sheets in DocumentDialogue.</p>
-                    <div class="impact-box">
-                        <strong>Impact</strong>
-                        <span>Cuts contract validation time in Real Estate Accounting by ~33% (43 days).</span>
-                    </div>
-                </div>
-                <!-- Case 3 -->
-                <div class="glass-card reveal" style="transition-delay: 0.2s;">
-                    <span class="card-badge">Development IT</span>
-                    <h3>Typo</h3>
-                    <p>Compiles written documentation, ensuring high-level grammar and standard templates are used.</p>
-                    <div class="impact-box">
-                        <strong>Impact</strong>
-                        <span>Standardized outputs & ~29 days saved (75% reduction).</span>
-                    </div>
-                </div>
+                <div class="credentials reveal"><h3>Selected certifications</h3><ul class="tag-list"><li class="skill-tag">Professional Scrum Master &middot; PSM I</li><li class="skill-tag">Professional Agile Leadership &middot; PAL I</li><li class="skill-tag">Certified Agile Coach</li><li class="skill-tag">Project Management &middot; DIN 69901 / ISO 21500</li></ul></div>
             </div>
-        </div>
-    </section>
-
-    <!-- Philosophy Quote -->
-    <section class="section" style="background: linear-gradient(to right, rgba(29, 68, 119, 0.1), transparent);">
-        <div class="container" style="text-align: center; max-width: 800px;">
-            <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent-cyan); margin-bottom: 30px; opacity: 0.5;"></i>
-            <h2 class="reveal" style="font-size: 2rem; line-height: 1.4; margin-bottom: 30px;">
-                "I believe in bringing together business strategy, enablement and implementation to deliver measurable value".
-            </h2>
-            <p class="reveal" style="color: var(--text-muted);">
-                Leading the AI@OPEA Initiative.
-            </p>
-        </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section">
+        </section>
+    </main>
+    <footer id="contact" class="contact-footer">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Professional <span>Experience</span></h2>
-            </div>
-            
-            <div class="timeline">
-                <!-- Job 1 -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">Oct 2023 - Present</span>
-                    <h3 class="timeline-role">Senior Digital Transformation Manager</h3>
-                    <div class="timeline-company">RWE Renewables Europe & Australia GmbH, Essen</div>
-                    <ul class="timeline-desc">
-                        <li>Leading the AI@OPEA Initiative based on a 3‑pillar approach.</li>
-                        <li>Invented and implemented an AI Persona Framework.</li>
-                        <li>Delivered 20+ AI workshops upskilling ~350 colleagues.</li>
-                        <li>Co-led POCs with IT/OT (Model Context Protocol, AI Agents).</li>
-                        <li>Collaborating with IT leads to ensure AI solutions are production-ready and compliant.</li>
-                    </ul>
-                </div>
-                <!-- Job 2 -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">Aug 2019 - Sep 2023</span>
-                    <h3 class="timeline-role">Senior Digital Expert</h3>
-                    <div class="timeline-company">RWE Renewables GmbH, Essen</div>
-                    <ul class="timeline-desc">
-                        <li>Led digital initiatives delivering high‑value MVPs using Lean Startup & Scrum.</li>
-                        <li>Founded and led the “Process Optimization Factory” (POF) to automate repetitive processes.</li>
-                    </ul>
-                </div>
-                <!-- Job 3 -->
-                <div class="timeline-item reveal">
-                    <div class="timeline-dot"></div>
-                    <span class="timeline-date">Aug 2013 - Oct 2017</span>
-                    <h3 class="timeline-role">Senior Manager Mobile Solutions</h3>
-                    <div class="timeline-company">GS1 Germany GmbH, Cologne</div>
-                    <ul class="timeline-desc">
-                        <li>Provided strategy consulting in Digital & Mobile Commerce.</li>
-                        <li>Led mobile commerce projects in FMCG and retail.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-header reveal" style="text-align: center;">
-                <h2 class="section-title">Education & <span>Skills</span></h2>
-                <p style="color: var(--text-muted);">Post Graduate Program in AI & ML | UT Austin (May 2025 – Feb 2026)</p>
-            </div>
-
-            <div class="skills-wrapper reveal">
-                <div class="skill-category">Core Competencies</div>
-                <span class="skill-tag">AI Enablement</span>
-                <span class="skill-tag">Prompt Engineering</span>
-                <span class="skill-tag">Generative AI (LLMs, RAG)</span>
-                <span class="skill-tag">Responsible AI & Ethics</span>
-                <span class="skill-tag">Digital Transformation</span>
-                <span class="skill-tag">Agile Leadership</span>
-                <span class="skill-tag">Learning: Vibe-Coding</span>
-                
-                <div class="skill-category">Tools of Choice</div>
-                <span class="skill-tag">ChatGPT</span>
-                <span class="skill-tag">n8n</span>
-                <span class="skill-tag">GitHub Copilot</span>
-                <span class="skill-tag">Gemini</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="container footer-cta reveal">
-            <h2>Ready to drive the future?</h2>
-            <a href="mailto:andre.gerecke@rwe.com" class="btn btn-primary">Let's Connect</a>
-            <div class="footer-copy">
-                &copy; 2025 Andre Gerecke. Built with AI assistance.
-            </div>
+            <div class="reveal"><p class="section-kicker">Let&rsquo;s connect</p><h2>Let&rsquo;s talk about <span class="text-gradient">AI transformation.</span></h2><p class="contact-intro">Business priorities, practical enablement and implementation. I welcome an exchange on making AI work in everyday business.</p><div class="cta-group"><a href="mailto:andre.gerecke@rwe.com" class="btn btn-primary">Get in touch <span aria-hidden="true">&nearr;</span></a><a href="assets/Andre_Gerecke_CV_2026.pdf" class="btn btn-secondary" download>Download CV <span aria-hidden="true">&darr;</span></a></div><a class="contact-email" href="mailto:andre.gerecke@rwe.com">andre.gerecke@rwe.com</a></div>
+            <p class="footer-copy">&copy; 2026 Andre Gerecke &nbsp;&middot;&nbsp; Built with AI assistance</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
     <script>
-        // 1. Custom Cursor Logic
-        const cursorDot = document.querySelector('.cursor-dot');
-        const cursorOutline = document.querySelector('.cursor-outline');
-        
-        window.addEventListener('mousemove', (e) => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-            
-            // Dot follows instantly
-            cursorDot.style.left = `${posX}px`;
-            cursorDot.style.top = `${posY}px`;
-            
-            // Outline follows with delay (animation handled by CSS transition)
-            cursorOutline.animate({
-                left: `${posX}px`,
-                top: `${posY}px`
-            }, { duration: 500, fill: "forwards" });
-        });
-
-        // Hover effect for links
-        document.querySelectorAll('a, .btn, .skill-tag').forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('hovering'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('hovering'));
-        });
-
-        // 2. Scroll Reveal Animation
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            const elementVisible = 100;
-            
-            revealElements.forEach((reveal) => {
-                const elementTop = reveal.getBoundingClientRect().top;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveal.classList.add('active');
+        (() => {
+            const toggle = document.querySelector('.nav-toggle');
+            const navigation = document.querySelector('#nav-links');
+            document.body.classList.add('menu-ready');
+            const closeMenu = () => {
+                toggle.setAttribute('aria-expanded', 'false');
+                navigation.dataset.open = 'false';
+            };
+            toggle.addEventListener('click', () => {
+                const open = toggle.getAttribute('aria-expanded') !== 'true';
+                toggle.setAttribute('aria-expanded', String(open));
+                navigation.dataset.open = String(open);
+            });
+            navigation.addEventListener('click', event => {
+                if (event.target.closest('a')) closeMenu();
+            });
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+                    closeMenu();
+                    toggle.focus();
                 }
             });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-
-        // 3. Number Counter Animation
-        const counters = document.querySelectorAll('.metric-item h3');
-        let hasCounted = false;
-
-        const startCounters = () => {
-            const section = document.querySelector('.metrics-bar');
-            const sectionTop = section.getBoundingClientRect().top;
-            
-            if (sectionTop < window.innerHeight && !hasCounted) {
-                hasCounted = true;
-                counters.forEach(counter => {
-                    const target = +counter.getAttribute('data-target');
-                    const duration = 2000; // 2 seconds
-                    const increment = target / (duration / 16); // 60fps
-                    
-                    let current = 0;
-                    const updateCounter = () => {
-                        current += increment;
-                        if (current < target) {
-                            counter.innerText = Math.ceil(current) + (target > 100 ? '+' : '');
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.innerText = target + (target > 100 ? '+' : '');
-                        }
-                    };
-                    updateCounter();
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
+            const elements = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        revealObserver.unobserve(entry.target);
+                    }
                 });
-            }
-        };
-        window.addEventListener('scroll', startCounters);
-
-        // Initial trigger
-        revealOnScroll();
+            }, { threshold: 0.07 });
+            document.documentElement.classList.add('motion-ready');
+            elements.forEach(element => revealObserver.observe(element));
+            const metrics = document.querySelector('.metrics-bar');
+            const numberObserver = new IntersectionObserver(entries => {
+                if (!entries.some(entry => entry.isIntersecting)) return;
+                numberObserver.disconnect();
+                document.querySelectorAll('[data-target]').forEach(counter => {
+                    const target = Number(counter.dataset.target);
+                    const prefix = counter.dataset.prefix || '';
+                    const suffix = counter.dataset.suffix || '';
+                    const started = performance.now();
+                    const frame = now => {
+                        const progress = Math.min((now - started) / 1100, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        counter.textContent = prefix + Math.round(target * eased) + suffix;
+                        if (progress < 1) requestAnimationFrame(frame);
+                    };
+                    requestAnimationFrame(frame);
+                });
+            }, { threshold: 0.15 });
+            numberObserver.observe(metrics);
+        })();
     </script>
 </body>
 </html>

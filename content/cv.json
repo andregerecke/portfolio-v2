@@ -1,0 +1,97 @@
+{
+  "name": "Andre Gerecke",
+  "title": "Senior Digital Transformation Manager",
+  "positioning": "AI strategy, enablement and implementation",
+  "email": "andre.gerecke@rwe.com",
+  "website": "https://andregerecke.github.io/portfolio-v2/",
+  "updated": "October 2026",
+  "profile": "Digital transformation professional with 16+ years of experience and functional AI leadership in renewables. I shape AI transformation at OPEA, supporting adoption across business functions from use-case ideation and experimentation through implementation, scaling and impact tracking. I developed an AI Prompting Framework and build capability through hands-on workshops, Copilot enablement and coaching. With business, IT/OT and technology partners, I turn opportunities into solutions aligned with enterprise architecture and operational needs.",
+  "competencies": [
+    "AI strategy translation and scaling: business-led use cases, adoption and measurable impact",
+    "Innovation and experimentation: ideation, proof of concept, rapid iteration and validation",
+    "AI enablement portfolio and delivery: hands-on workshops, rapid prototyping and hackathons",
+    "Business-led delivery: persona implementations, benefit tracking and operational integration",
+    "Digital transformation and agile project management: Scrum, Design Thinking and Lean Startup",
+    "Cross-functional collaboration, workshop facilitation and coaching: business, IT/OT and delivery teams"
+  ],
+  "experience": [
+    {
+      "role": "Senior Digital Transformation Manager",
+      "company": "RWE Renewables Europe & Australia GmbH",
+      "location": "Essen",
+      "dates": "October 2023 - Present",
+      "bullets": [
+        "Conceived the OPEA AI Strategy 2026 and supporting AI enablement portfolio, defining a structured approach to scaling AI adoption and connecting practical capability building with business-value creation.",
+        "Shaped AI-centred business-process redesign through Design Thinking-inspired workshops with Development EU, Engineering and Operations, contributing to NPV.OptimAIzer, an AI lighthouse integrating turbine selection, layout optimisation, wind-resource assessment and financial modelling to support project-value optimisation.",
+        "Designed the 2027 OPEA AI Enablement and Scaling Concept, combining a four-level AI maturity model, six-phase methodology and targeted six-to-eight-week AI Value Waves with practical use-case implementation and evidence-based impact measurement; defined a scaling roadmap through 2029.",
+        "Designed and delivered business-specific, hands-on Copilot workshops and rapid-prototyping sessions, reaching 700+ colleagues with practical approaches to applying AI in business processes, including opportunities to create Copilot agents.",
+        "Established a cross-functional network of 28 AI Champions to support adoption through peer learning, reusable prompts and agents, use-case identification, and contributions to workshops and hackathons.",
+        "Co-organised and delivered a Microsoft 365 Copilot and Copilot Studio hackathon in September 2026 with Microsoft, bringing together approximately 50 business participants across five groups to develop early prototypes, including a UK Control Room shift-handover agent workflow, with structured follow-up pathways.",
+        "Supported and guided business teams from ideation through creation and implementation of AI agents, including a Procurement Support Agent that compares market developments with internal procurement information and generates recommendations."
+      ]
+    },
+    {
+      "role": "Senior Digital Expert",
+      "company": "RWE Renewables GmbH",
+      "location": "Essen",
+      "dates": "August 2019 - September 2023",
+      "bullets": [
+        "Led digital initiatives delivering high-value MVPs using Lean Startup, Design Thinking and Scrum.",
+        "Founded and led the Process Optimization Factory to automate repetitive processes, including Azure Document Intelligence for PDF data extraction.",
+        "Developed an Agile Innovation Framework for scouting and evaluating digital opportunities; provided agile coaching across business teams."
+      ]
+    },
+    {
+      "role": "Senior Manager Mobile Solutions",
+      "company": "GS1 Germany GmbH",
+      "location": "Cologne",
+      "dates": "August 2013 - August 2019",
+      "bullets": [
+        "Provided strategy consulting in Digital & Mobile Commerce: couponing, location-based marketing, smart packaging, conversational commerce and AR.",
+        "Led mobile commerce projects in FMCG and retail; conducted market analysis and developed project concepts."
+      ]
+    },
+    {
+      "role": "International Project Manager",
+      "company": "Venista Ventures GmbH & Co. KG",
+      "location": "Cologne",
+      "dates": "June 2010 - July 2013",
+      "bullets": [
+        "Managed international roll-outs of mobile services and apps using agile project management.",
+        "Drove product-management improvements across the app portfolio; evaluated business models and the competitive landscape."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "qualification": "Post Graduate Program in Artificial Intelligence & Machine Learning (Business Applications)",
+      "institution": "The University of Texas at Austin",
+      "dates": "May 2025 - February 2026",
+      "detail": "Python foundations; machine learning; advanced ML (ensembles and hyperparameter tuning); neural networks; computer vision (CNNs); NLP with generative AI (Transformers, RAG and prompt engineering); multimodal GenAI; model deployment; MLOps (CI/CD, monitoring and retraining); recommendation systems. Hands-on learning with 7 projects and 40+ case studies; mentored by industry experts from Microsoft, SAP, IBM and Apple."
+    },
+    {
+      "qualification": "M.A., Marketing Management",
+      "institution": "European University of Applied Sciences (EUFH), Cologne",
+      "dates": "2015 - 2017"
+    },
+    {
+      "qualification": "B.Sc., International Business",
+      "institution": "Pforzheim University of Applied Sciences; double degree with ESCE Paris",
+      "dates": "2006 - 2010"
+    }
+  ],
+  "certifications": [
+    "Professional Scrum Master (PSM I)",
+    "Professional Agile Leadership (PAL I)",
+    "Certified Agile Coach",
+    "Project Management DIN 69901; ISO 21500"
+  ],
+  "skills": [
+    {"category": "AI and ML methods", "detail": "Generative AI (LLMs), prompt engineering and persona/agent design (Expert); RAG use cases (Expert); MLOps (CI/CD, monitoring and retraining); Python, TensorFlow, PyTorch and LangChain."},
+    {"category": "AI platforms and development", "detail": "ChatGPT, Microsoft Copilot, Claude, Gemini and DeepSeek (Expert); GitHub Copilot, OpenAI Codex and Claude Code (Expert); Microsoft Copilot Studio (Advanced)."},
+    {"category": "Workflow automation", "detail": "n8n and Make (Advanced); Microsoft Power Platform and Power Automate (Advanced)."},
+    {"category": "Collaboration and design", "detail": "Mural and Miro (Expert); Figma (Basic)."},
+    {"category": "Project and productivity tools", "detail": "Azure DevOps, Airtable and Confluence (Advanced); Microsoft Office and Teams (Expert)."},
+    {"category": "Languages", "detail": "German: native. English: business fluent (C1). French: business fluent (C1)."}
+  ]
+}
